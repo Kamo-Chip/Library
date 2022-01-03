@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Library</title>
+        <link rel = "stylesheet" href = "styles.css">
+    </head>
+    <body id = "body">
+        <h1>Library</h1>
+        <div class = "dropdown">
+            <button type="menu" id = "sort">Sort</button>
+            <div id = "dropdown-content">
+                <button class = "dropdown-btn" id = "asc">Page numbers (ascending)</button>
+                <button class = "dropdown-btn" id = "desc">Page numbers (descending)</button>
+                <button class = "dropdown-btn" id = "display">Display only unread books</button>
+                <button class = "dropdown-btn" id = "reset">Reset</button>
+            </div>
+        </div>
+        
+        <form id = "form">
+            <div>
+                <div class = "field">
+                    <label>Title</label>
+                    <input type="text" id="title">
+                </div>
+                <div class = "field">
+                    <label>Author</label>
+                    <input type="text" id="author">
+                </div>
+                <div class = "field">
+                    <label>Number of Pages</label>
+                    <input type= "number" id="noPages">
+                </div>
+                <div class = "field">
+                    <button type = "button" id = "add">Done</button>
+                </div>
+            </div>
+        </form>
+        <div id = "grid-container">
+
+        </div>
+        <button type = "button" id = "btn">New Book</button>
+        
+        <script src = "Book.js"></script>
+    </body>
+</html>
