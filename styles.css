@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color:#fff;
+    color: #000; 
+    font-family: 'PlayFair Display', Arial;
+}
+
+h1{
+    font-size: 50px;
+}
+
+#grid-container{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-column-gap: 3rem;
+    grid-row-gap: 4rem;
+    position: relative;
+    bottom: 10rem;
+}
+
+.grid-item{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #00af2fb6;
+    border-style: solid;
+    border-color:#000;
+    border-radius: 10px;
+    height: 20rem;
+    width: 17rem;
+}   
+
+.grid-item:hover{
+    transition: 0.5s;
+    transform: scale(1.05);
+}
+
+.grid-item div{
+    text-align: center;
+    width: 100%;
+    height: fit-content;
+    padding-bottom: 20px;
+    font-size: 23px;
+    font-weight: bold;
+}
+
+.grid-item button{
+    position: relative;
+    transform: scale(0.7);
+    color: #fff;   
+    font-size: 30px;
+}
+
+.remove{
+    background-color: rgb(255, 102, 0);
+   
+}
+
+.remove:hover{
+    background-color: rgb(255, 38, 0);
+}
+
+.read{
+    background-color: royalblue;
+
+}
+
+.read:hover{
+    background-color: rgb(24, 75, 228);
+}
+
+.dropdown{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    left: 42%;
+    bottom: 100px;
+    transform: scale(0.75);
+}
+
+#dropdown-content{
+    display: flex;
+    flex-direction: column;
+    visibility: hidden;
+}
+.dropdown-btn{
+    background-color: #00af2fb6;
+    border-radius: 0px;
+    font-size: 25px;
+    font-family: sans-serif;
+    width: 248px;
+    height: fit-content;
+    margin-top: 5px
+}
+form{
+    visibility:hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 18%;
+    background-color: #00af2fb6;
+    height: 300px;
+    width: 550px;
+    border-radius: 20px;
+}
+
+form button{
+    transform: scale(0.8);
+}
+
+
+label{
+    font-size: 25px;
+    position: relative;
+    right: 70px
+}
+
+input{
+    float: right;
+    height: 20px;
+    border-style: solid;
+    border-color: #367948;
+}
+
+.field{
+    padding-top: 20px;
+}
+#btn{
+    position:relative;
+    bottom: 13rem;
+}
+
+#add{
+    position: relative;
+    left: 90px;
+}
+button{
+    height: 4rem;
+    width: 10.5rem;
+    border-radius: 100px;
+    border: 2px solid black;
+    background-color: #00AC2F;
+    font-family: 'Playfair Display', Arial;
+    font-size: 30px;
+}
+
+button:hover{
+    background-color: #017720;
+}
+
+
+
+
+
