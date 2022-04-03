@@ -67,6 +67,7 @@ class Library {
     addBook(title, author, numPages) {
         if(title === "" || author === "" || numPages === ""){
             alert("Values cannot be empty");
+            return;
         }
         if (this.contains(title, author)) {
             alert("Book is already present in library");
