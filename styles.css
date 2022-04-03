@@ -1,13 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300&family=Nunito:ital,wght@1,300&display=swap');
 
 body{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color:#fff;
+    background-color: #00af2f4b;
     color: #000; 
-    font-family: 'PlayFair Display', Arial;
+    font-family: 'Merriweather', Arial;
 }
 
 h1{
@@ -16,11 +16,11 @@ h1{
 
 #grid-container{
     display: grid;
-    grid-template-columns: auto auto auto auto;
+    grid-template-columns: auto auto auto;
     grid-column-gap: 3rem;
     grid-row-gap: 4rem;
     position: relative;
-    bottom: 10rem;
+    bottom: 16rem;
 }
 
 .grid-item{
@@ -72,7 +72,7 @@ h1{
 }
 
 .read:hover{
-    background-color: rgb(24, 75, 228);
+    background-color: royalblue;
 }
 
 .dropdown{
@@ -156,8 +156,3 @@ button{
 button:hover{
     background-color: #017720;
 }
-
-
-
-
-
