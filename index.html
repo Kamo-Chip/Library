@@ -16,23 +16,24 @@
             </div>
         </div>
         
-        <form id = "form">
+        <form id = "form" novalidate>
             <div>
                 <div class = "field">
                     <label>Title</label>
-                    <input type="text" id="title">
+                    <input type="text" id="title" >
+                    <p id = "error-title" class = "error"></p>
                 </div>
                 <div class = "field">
                     <label>Author</label>
                     <input type="text" id="author">
+                    <p id = "error-author" class = "error"></p>
                 </div>
                 <div class = "field">
                     <label>Number of Pages</label>
                     <input type= "number" id="noPages">
+                    <p id = "error-pages" class = "error"></p>
                 </div>
-                <div class = "field">
                     <button type = "button" id = "add">Done</button>
-                </div>
             </div>
         </form>
         <div id = "grid-container">
