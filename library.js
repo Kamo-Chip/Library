@@ -32,7 +32,7 @@ class Library {
     library;
 
     constructor() {
-        this.library = [new Book("Psychology of Money", "Morgan Houssel", 30), new Book("1984", "George Orwell", 200), new Book("Animal Farm", "George Orwell", 50)];
+        this.library = [];
         this.displayBooks(this.library);
     }
 
@@ -65,14 +65,6 @@ class Library {
     }
 
     addBook(title, author, numPages) {
-        if(title === "" || author === "" || numPages === ""){
-            alert("Values cannot be empty");
-            return;
-        }
-        if (this.contains(title, author)) {
-            alert("Book is already present in library");
-            return;
-        }
         this.library.push(new Book(title, author, numPages));
     }
 
@@ -159,7 +151,18 @@ class Library {
     }
 }
 
-const library = new Library();
+let library = new Library();
+
+if(localStorage.length > 0){
+    let storedLibrary = JSON.parse(localStorage.getItem("libraryStorage"));
+    let updatedLibrary = new Library();
+    storedLibrary.library.forEach(element =>{
+        updatedLibrary.addBook(element.title, element.author, element.numPages, element.hasRead);
+    });
+    library = updatedLibrary;
+}
+
+library.displayBooks(library.library)
 
 const form = document.getElementById("form");
 const sortBtn = document.getElementById("sort");
@@ -178,14 +181,20 @@ doneBtn.addEventListener("click", () => {
     const title = document.getElementById("title");
     const author = document.getElementById("author");
     const numPages = document.getElementById("noPages");
+    
+    if(!isValid()){
+        return;
+    }
 
     library.addBook(title.value, author.value, numPages.value);
+    localStorage.setItem("libraryStorage", JSON.stringify(library));
     grid.innerHTML = null;
     library.displayBooks(library.library);
     grid.style.visibility = "visible";
     sortBtn.style.visibility = "visible";
     btnNewBook.style.visibility = "visible";
     form.style.visibility = "hidden";
+
 });
 
 let keepTrackOfSort = 1;
@@ -224,3 +233,70 @@ sortBtn.addEventListener("click", () => {
         dropDownContent.style.visibility = "hidden";
     }
 });
+
+function validTitle(){
+    const title = document.getElementById("title");
+    const error = document.getElementById("error-title");
+    error.textContent = "";
+
+    let isValid = true;
+
+    title.setCustomValidity("Title cannot be empty");
+    
+    if(title.value === ""){
+        title.setCustomValidity("Title cannot be empty");
+        error.textContent = title.validationMessage;
+        isValid = false;
+    }
+
+    return isValid;
+}
+
+function validAuthor(){
+    const author = document.getElementById("author");
+    const error = document.getElementById("error-author");
+    error.textContent = "";
+
+    let isValid = true;
+    console.log("dfsaf")
+    if(author.value === ""){
+        
+        author.setCustomValidity("Author cannot be empty");
+        error.textContent = author.validationMessage;
+        isValid = false;
+    }
+    return isValid;
+}
+
+function validPages(){
+    const numPages = document.getElementById("noPages");
+    const error = document.getElementById("error-pages");
+    error.textContent = "";
+
+    let isValid = true;
+    numPages.setCustomValidity("Set the number of pages");
+
+    if(numPages.value === ""){
+        numPages.setCustomValidity("Set the number of pages");
+        error.textContent = numPages.validationMessage;
+        isValid = false;
+    }
+    return isValid;
+}
+
+function isValid() {
+    let isValid = true;
+
+    
+    if(!validPages()){
+        isValid = false;
+    }
+    if(!validTitle()){
+    isValid = false;
+    }
+    if(!validAuthor()){
+        isValid = false;
+    }
+    return isValid;
+}
+
