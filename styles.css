@@ -109,7 +109,7 @@ form{
     top: 18%;
     background-color: #00af2fb6;
     height: 300px;
-    width: 550px;
+    width: 900px;
     border-radius: 20px;
 }
 
@@ -119,6 +119,7 @@ form button{
 
 
 label{
+    width: 200px;
     font-size: 25px;
     position: relative;
     right: 70px
@@ -132,7 +133,18 @@ input{
 }
 
 .field{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
     padding-top: 20px;
+    width:fit-content
+}
+
+.field p{
+    width: 250px;
+    height: 26px;
+    font-weight: bold;
+    margin-left: 40px;
 }
 #btn{
     position:relative;
@@ -151,8 +163,17 @@ button{
     background-color: #00AC2F;
     font-family: 'Playfair Display', Arial;
     font-size: 30px;
+   
 }
 
 button:hover{
     background-color: #017720;
+}
+
+.error{
+    color: red;
+}
+
+#add{
+    margin-left: 150px;
 }
